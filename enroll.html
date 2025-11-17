@@ -1,0 +1,404 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Enrollment Form</title>
+
+<style>
+    body {
+        background-image: url();
+    }
+</style>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #fff;
+    color: #000;
+  }
+  h1, h3 {
+    text-align: center;
+    font-weight: bold;
+  }
+  .instructions {
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+  .form-section {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 25px;
+  }
+  label {
+    font-weight: bold;
+  }
+  .inline-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .input-boxes {
+    display: flex;
+    gap: 5px;
+    margin: 5px 0 15px 0;
+  }
+  .input-boxes input[type="text"] {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #000;
+  }
+  input[type="text"], input[type="number"], input[type="date"] {
+    padding: 3px 5px;
+    font-weight: normal;
+    font-size: 1em;
+    border: 1px solid #000;
+    box-sizing: border-box;
+  }
+  .half-width {
+    width: 48%;
+  }
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  td, th {
+    border: 1px solid #000;
+    padding: 4px;
+  }
+  th {
+    text-align: left;
+    font-weight: bold;
+  }
+  .small-box {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    margin-right: 5px;
+  }
+  @media (max-width: 700px) {
+    .inline-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .half-width {
+      width: 100%;
+    }
+    .input-boxes {
+      flex-wrap: wrap;
+    }
+  }
+  /* Button styling */
+  .form-buttons {
+    text-align: center;
+    margin: 30px 0;
+  }
+  button {
+    background-color: #00529B;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #003f72;
+  }
+</style>
+</head>
+<body>
+
+<h1>ENROLLMENT FORM</h1>
+<p style="text-align:center; font-weight:bold;">THIS FORM IS NOT FOR SALE</p>
+
+<p class="instructions">
+  <b>Instructions:</b> Print legibly all information required in CAPITAL letters and check all appropriate boxes. Submit accomplished form to the Person-in-Charge/Registrar/Class Adviser. Use black or blue pen only.
+</p>
+
+<form id="enrollmentForm">
+
+  <div class="form-section">
+    <p><b>1. School Year</b></p>
+    <div class="input-boxes">
+      <input type="text" maxlength="1" name="schoolYear1" required />
+      <input type="text" maxlength="1" name="schoolYear2" required />
+      <span style="margin: 0 5px;">-</span>
+      <input type="text" maxlength="1" name="schoolYear3" required />
+      <input type="text" maxlength="1" name="schoolYear4" required />
+    </div>
+
+    <p style="margin-top: 20px;">
+      <b>Learner Reference No. (LRN)? If applicable:</b>
+    </p>
+    <div class="input-boxes" style="width: 400px;">
+      <!-- 12 boxes for LRN -->
+      <input type="text" maxlength="1" name="lrn1" />
+      <input type="text" maxlength="1" name="lrn2" />
+      <input type="text" maxlength="1" name="lrn3" />
+      <input type="text" maxlength="1" name="lrn4" />
+      <input type="text" maxlength="1" name="lrn5" />
+      <input type="text" maxlength="1" name="lrn6" />
+      <input type="text" maxlength="1" name="lrn7" />
+      <input type="text" maxlength="1" name="lrn8" />
+      <input type="text" maxlength="1" name="lrn9" />
+      <input type="text" maxlength="1" name="lrn10" />
+      <input type="text" maxlength="1" name="lrn11" />
+      <input type="text" maxlength="1" name="lrn12" />
+    </div>
+  </div>
+
+  <div class="form-section">
+    <p><b>2. Grade Level to Enroll:</b></p>
+    <div class="checkbox-group">
+      <input type="checkbox" id="graded" name="gradeLevel" value="graded" />
+      <label for="graded">Graded, specify Grade Level</label>
+      <div class="input-boxes" style="margin-left:10px;">
+        <input type="text" maxlength="2" name="gradedLevel" />
+      </div>
+    </div>
+    <div class="checkbox-group" style="margin-top:5px;">
+      <input type="checkbox" id="nongraded" name="gradeLevel" value="nongraded" />
+      <label for="nongraded">Non-Graded (For Special Needs Education (SNEd) Only)</label>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <p><b>3. Learner's Personal Information</b></p>
+    
+    <label>PSA Birth Certificate No. (if available upon registration):</label><br/>
+    <div class="input-boxes" style="width: 100%;">
+      <input type="text" maxlength="30" name="psaBirthCert" style="flex-grow:1" />
+    </div>
+
+    <table>
+      <tr>
+        <th>Last Name</th>
+        <th>Birthdate (mm/dd/yyyy)</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-boxes">
+            <input type="text" maxlength="15" name="lastName1" />
+            <input type="text" maxlength="15" name="lastName2" />
+            <input type="text" maxlength="15" name="lastName3" />
+            <input type="text" maxlength="15" name="lastName4" />
+          </div>
+        </td>
+        <td>
+          <input type="date" name="birthdate" />
+        </td>
+      </tr>
+    </table>
+
+    <table style="margin-top:10px;">
+      <tr>
+        <th>First Name</th>
+        <th>Age</th>
+        <th>Sex</th>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" maxlength="30" name="firstName" style="width: 100%;" />
+        </td>
+        <td><input type="number" min="0" max="150" name="age" style="width: 80px;" /></td>
+        <td>
+          <label><input type="radio" name="sex" value="male" /> Male</label>
+          <label><input type="radio" name="sex" value="female" /> Female</label>
+        </td>
+      </tr>
+    </table>
+
+    <table style="margin-top:10px;">
+      <tr>
+        <th>Middle Name</th>
+        <th>Place of Birth (Municipality/City)</th>
+      </tr>
+      <tr>
+        <td><input type="text" maxlength="30" name="middleName" style="width: 100%;" /></td>
+        <td><input type="text" maxlength="50" name="placeOfBirth" style="width: 100%;" /></td>
+      </tr>
+    </table>
+
+    <table style="margin-top:10px;">
+      <tr>
+        <th>Extension Name e.g. Jr., III (if applicable)</th>
+        <th>Religion</th>
+        <th>Mother Tongue</th>
+      </tr>
+      <tr>
+        <td><input type="text" maxlength="5" name="extensionName" style="width: 100%;" /></td>
+        <td><input type="text" maxlength="50" name="religion" style="width: 100%;" /></td>
+        <td><input type="text" maxlength="50" name="motherTongue" style="width: 100%;" /></td>
+      </tr>
+    </table>
+
+    <p><b>Belonging to any Indigenous Peoples (IP) Community/Indigenous Cultural Community?</b></p>
+    <div class="checkbox-group">
+      <input type="checkbox" id="ipyes" name="ipCommunity" value="yes" />
+      <label for="ipyes">Yes</label>
+      <input type="checkbox" id="ipno" name="ipCommunity" value="no" />
+      <label for="ipno">No</label>
+      <span>If Yes, please specify:</span>
+      <input type="text" name="ipSpecify" style="flex-grow:1; margin-left: 10px;" />
+    </div>
+
+    <p><b>Is your family a beneficiary of 4Ps?</b></p>
+    <div class="checkbox-group">
+      <input type="checkbox" id="4pyes" name="fourPs" value="yes" />
+      <label for="4pyes">Yes</label>
+      <input type="checkbox" id="4pno" name="fourPs" value="no" />
+      <label for="4pno">No</label>
+    </div>
+
+    <p><b>If Yes, please write the 4Ps Household ID Number:</b></p>
+    <div class="input-boxes" style="width: 100%;">
+      <input type="text" maxlength="30" name="fourPsID" style="flex-grow:1" />
+    </div>
+
+    <h3>Current Address</h3>
+    <table>
+      <tr>
+        <th>House No.</th>
+        <th>Sitio/Street Name</th>
+        <th>Barangay</th>
+      </tr>
+      <tr>
+        <td><input type="text" name="currHouseNo" /></td>
+        <td><input type="text" name="currStreetName" /></td>
+        <td><input type="text" name="currBarangay" /></td>
+      </tr>
+      <tr>
+        <th>Municipality/City</th>
+        <th>Province</th>
+        <th>Country</th>
+        <th>Zip Code</th>
+      </tr>
+      <tr>
+        <td><input type="text" name="currMunicipality" /></td>
+        <td><input type="text" name="currProvince" /></td>
+        <td><input type="text" name="currCountry" /></td>
+        <td><input type="text" name="currZip" /></td>
+      </tr>
+    </table>
+
+    <p>
+      <b>Permanent Address</b> &nbsp;&nbsp;&nbsp;
+      Same with your Current Address?
+      <label><input type="checkbox" id="sameAddress" name="sameAddress" /> Yes</label>
+      <label><input type="checkbox" id="diffAddress" name="diffAddress" /> No</label>
+      <span style="font-weight: normal;">If Yes, proceed to item 4</span>
+    </p>
+
+    <table>
+      <tr>
+        <th>House No.</th>
+        <th>Sitio/Street Name</th>
+        <th>Barangay</th>
+      </tr>
+      <tr>
+        <td><input type="text" name="permHouseNo" /></td>
+        <td><input type="text" name="permStreetName" /></td>
+        <td><input type="text" name="permBarangay" /></td>
+      </tr>
+      <tr>
+        <th>Municipality/City</th>
+        <th>Province</th>
+        <th>Country</th>
+        <th>Zip Code</th>
+      </tr>
+      <tr>
+        <td><input type="text" name="permMunicipality" /></td>
+        <td><input type="text" name="permProvince" /></td>
+        <td><input type="text" name="permCountry" /></td>
+        <td><input type="text" name="permZip" /></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="form-section">
+    <p><b>4. Parent's/Guardian's Information</b></p>
+
+    <table>
+      <tr>
+        <th>Father's Name</th>
+        <th>Contact Number</th>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" placeholder="Last Name" name="fatherLastName" />
+          <input type="text" placeholder="First Name" name="fatherFirstName" />
+          <input type="text" placeholder="Middle Name" name="fatherMiddleName" />
+        </td>
+        <td><input type="text" name="fatherContact" /></td>
+      </tr>
+    </table>
+
+    <table style="margin-top: 10px;">
+      <tr>
+        <th>Mother's Maiden Name</th>
+        <th>Contact Number</th>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" placeholder="Last Name" name="motherLastName" />
+          <input type="text" placeholder="First Name" name="motherFirstName" />
+          <input type="text" placeholder="Middle Name" name="motherMiddleName" />
+        </td>
+        <td><input type="text" name="motherContact" /></td>
+      </tr>
+    </table>
+
+    <table style="margin-top: 10px;">
+      <tr>
+        <th>Legal Guardian's Name</th>
+        <th>Contact Number</th>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" placeholder="Last Name" name="guardianLastName" />
+          <input type="text" placeholder="First Name" name="guardianFirstName" />
+          <input type="text" placeholder="Middle Name" name="guardianMiddleName" />
+        </td>
+        <td><input type="text" name="guardianContact" /></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="form-buttons">
+    <button type="submit">Submit</button>
+    <button type="button" id="printBtn">Print</button>
+  </div>
+
+</form>
+
+<script>
+  const form = document.getElementById('enrollmentForm');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // prevent actual form submission for demo
+    alert('Form successfully submitted!');
+    // Here you can add your real form submission logic, like sending data via AJAX
+  });
+
+  const printBtn = document.getElementById('printBtn');
+  printBtn.addEventListener('click', function() {
+    window.print();
+  });
+</script>
+
+</body>
+</html>
